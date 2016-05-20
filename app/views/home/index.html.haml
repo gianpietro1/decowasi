@@ -1,25 +1,24 @@
-.container_home
-	.row
-		#slide
-			%ul.slideme
-				- @sliders.each do |slider|
-					%li
-						%a{href: '#', class:'slider_link'}
-							.slider_image
-								= image_tag(slider.image)
-								.slider_text
-									= slider.title
+.row
+	#slide
+		%ul.slideme
+			- @sliders.each do |slider|
+				%li
+					%a{href: '#', class:'slider_link'}
+						.slider_image
+							= image_tag(slider.image)
+							.slider_text
+								= slider.title
 
-	.row
-		#featured
-			- @featureds.each do |featured|
-				.featured
-					.featured_pattern
-					.featured_image
-						= image_tag(featured.image)
-					.featured_content
-						.featured_title
-							= featured.title
-						.featured_description
-							= featured.description
+.row
+	#featured
+		- @featureds.each do |featured|
+			.featured
+				.featured_pattern
+				.featured_image
+					= image_tag(featured.image)
+				.featured_content
+					.featured_title
+						= featured.title
+					.featured_description
+						= featured.description
 
