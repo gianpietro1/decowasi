@@ -1,0 +1,13 @@
+= form_for slider do |f|
+	.form-group
+		= f.label 'Mensaje'
+		= f.text_field :title, class: 'form-control', placeholder: 'Ingresa el mensaje'
+	.form_group
+		= f.label 'Imagen'
+		= f.file_field :image
+		= f.hidden_field :image_cache
+	.form-group
+		= f.submit "Guardar", class: 'btn btn-success'
+		= link_to "Cancelar", sliders_path, class: 'btn btn-warning'
+		=	link_to "Borrar", slider, method: :delete, class: 'btn btn-danger', data: { confirm: 'Seguro que deseas borrar?' }
+

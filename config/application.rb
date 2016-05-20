@@ -31,5 +31,11 @@ module Decowasi
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.i18n.default_locale = :es
+    config.assets.paths << Rails.root.join('assets', 'fonts')
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
+
   end
 end

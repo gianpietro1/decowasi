@@ -1,0 +1,190 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*** General Styles ***/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-style: normal;
+  src: font-url('Roboto-Regular.ttf');
+  src: font-url('Roboto-Regular.ttf') format('truetype');
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+	  padding-bottom: 20px;
+    overflow-x: hidden; 
+}
+
+.clear {
+	clear:both;
+}
+
+.margin-top-20 {
+	margin-top: 20px;
+}
+
+body {
+   font-family: 'Roboto', 'Helvetica';
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+/*** Header ***/
+
+#header {
+	padding: 0 20px;
+}
+
+.pattern_one {
+	height: 20px;
+	background: asset-url('patron1.png') no-repeat;
+}
+
+#user-menu {
+	height: auto;
+}
+
+.logo img {
+	margin-top:10px;
+	width: 250px;
+}
+
+#main-menu ul, #logo-row {
+	padding-left: 20px;
+}
+
+.menu-bar {
+	background-color: #ccc;
+	height: 40px;
+}
+
+.menu-bar ul {
+	float: right;
+	padding: 0;
+	margin: 5px auto;
+}
+
+#main-menu li, .menu-bar li {
+	list-style: none;
+	display: inline-block;
+	text-align: center;
+}
+
+.menu-bar li {
+	width: 100px;
+	padding-top: 4px;
+}
+
+#main-menu li a, .menu-bar li a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+.menu-bar li a {
+	color: #444;
+}
+
+#main-menu li {
+	padding-right: 20px;
+	font-size: 1em;
+}
+
+#main-menu a.active {
+	border-bottom: 2px solid #66cc99;
+}
+
+.footer {
+	margin: 0 auto;
+	text-align: center;
+	min-height: 410px;
+	background-color: #444;
+	color: white;
+}
+
+.social, .about, .contact {
+	width: 90%;
+	text-align: center;
+	margin: 10px auto;
+}
+
+.footer a {
+	color: white;
+}
+
+.social, .about {
+	padding-right: 10px;
+}
+
+.social {
+	font-size: 2.5em;
+	padding-left: 15px;
+	padding-top: 15px;
+}
+
+.social i {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/****************************************************/
+/******************** DESKTOP ***********************/
+/****************************************************/
+
+@media screen and (min-width: 768px) {
+
+#main-menu li {
+	padding-right: 60px;
+	font-size: 1.6em;
+}
+
+.social, .about, .contact {
+	width: 33%;
+	display: inline-block;
+	text-align: left;
+	vertical-align: top
+}
+
+.footer {
+	min-height: 310px;
+}
+
+
+}

@@ -1,0 +1,81 @@
+!!! 5
+%html
+	%head
+		%title
+			decowasi
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false
+		= javascript_include_tag 'application', 'data-turbolinks-track' => false
+		= favicon_link_tag 'favicon.ico'
+		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+		= display_meta_tags :site => 'decowasi.com' 
+		= csrf_meta_tags
+	%body{ data: {no_turbolink: true} }
+		.container-wide
+			#header
+				#user-menu
+					.menu-bar
+						%ul
+							- unless current_user 
+								%li
+									%a{href: new_user_registration_path} registrarse
+								%li
+									%a{href: new_user_session_path} ingresar
+							- else
+								%li
+									%a{href: '#'} usuario
+					.pattern_one
+				#logo-row
+					.logo
+						= image_tag("logo.png")
+				#main-menu
+					%ul
+						%li
+							%a{href: root_path, class: 'active'} inspiración
+						%li
+							%a{href: '#'} especialistas
+						%li
+							%a{href: '#'} tiendas
+
+			- if flash[:notice]
+				.alert.alert-success
+					%button{type:"button",class:"close",data:{dismiss:"alert"}}
+						&times;
+					= flash[:notice]
+			- elsif flash[:error]
+				.alert.alert-danger
+					%button{type:"button",class:"close",data:{dismiss:"alert"}}
+						&times;
+					= flash[:error]
+			- elsif flash[:alert]
+				.alert.alert-warning
+					%button{type:"button",class:"close",data:{dismiss:"alert"}}
+						&times;
+					= flash[:warning]
+
+			= yield
+
+		.footer
+			.social
+				%a{href:'#', target: "_blank"}
+					%i{class:"fa fa-facebook-official","aria-hidden":"true"}
+				%a{href:'#', target: "_blank"}
+					%i{class:"fa fa-google-plus-square","aria-hidden":"true"}
+				%a{href:'#'}
+					%i{class:"fa fa-twitter-square","aria-hidden":"true"}
+				%a{href:'#', target: "_blank"}
+					%i{class:"fa fa-pinterest-square","aria-hidden":"true"}
+			.about
+				%h3
+					quiénes somos
+				%p
+					Decowasi es una comunidad online o red social enfocada en el mercado del diseño y reno- vación de hogares que per- mite facilitar la interacción y dinámica entre las personas que están buscando diseñar o remodelar su casa, espe- cialistas en diseño como dis- eñadores y arquitectos y tien- das que quieran incoporar el canal de venta online a través de un marketplace. 
+			.contact
+				%h3
+					contacto
+				%a{mailto: "soporte@decowasi.com"}
+					Ayuda
+				%br
+				%a{mailto: "ventas@decowasi.com"}
+					Inscribe tu proyecto
+
+

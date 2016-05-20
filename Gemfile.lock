@@ -56,8 +56,6 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    bootstrap3-datetimepicker-rails (4.17.37)
-      momentjs-rails (>= 2.8.1)
     bootsy (2.2.2)
       carrierwave (~> 0.10)
       mini_magick (~> 4.4)
@@ -233,6 +231,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-sass (4.6.2)
+      sass (>= 3.2)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
@@ -281,8 +281,6 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.9.0)
-    momentjs-rails (2.11.1)
-      railties (>= 3.1)
     multi_json (1.12.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -386,7 +384,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  bootstrap3-datetimepicker-rails (~> 4.17.37)
   bootsy
   byebug
   capistrano
@@ -399,6 +396,7 @@ DEPENDENCIES
   faker
   figaro (= 1.0)
   fog
+  font-awesome-sass
   friendly_id
   haml-rails
   html2haml
@@ -408,7 +406,6 @@ DEPENDENCIES
   mail_form
   meta-tags
   mini_magick
-  momentjs-rails (>= 2.9.0)
   pg
   pundit
   rails (= 4.2.5.1)

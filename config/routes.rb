@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :sliders, except: [:show]
+  resources :featureds, except: [:show]
+
+  devise_for :users
   root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

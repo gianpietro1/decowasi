@@ -1,0 +1,10 @@
+.col-md-1
+.col-md-8
+	%h3
+		Sliders
+	= link_to "Nuevo", new_slider_path, class: 'btn btn-success'
+	- @sliders.each do |slider|
+		.media
+			.media-body
+				%h4.media-heading
+					= link_to slider.title, edit_slider_path(slider)

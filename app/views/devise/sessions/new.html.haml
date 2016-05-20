@@ -1,0 +1,21 @@
+.container_home
+  .row
+    .col-md-4
+      %h2
+        Ingresar
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-group
+          = f.label 'Correo'
+          %br/
+          = f.email_field :email, autofocus: true, class: "form-control"
+        .form-group
+          = f.label 'Contraseña'
+          %br/
+          = f.password_field :password, autocomplete: "off", class: "form-control"
+        - if devise_mapping.rememberable?
+          .form-group
+            = f.check_box :remember_me
+            = f.label 'Recordarme'
+        .actions
+          = f.submit 'Ingresar', class: "btn btn-success"
+      = render "devise/shared/links"
