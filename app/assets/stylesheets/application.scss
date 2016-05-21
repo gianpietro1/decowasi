@@ -123,6 +123,10 @@ body {
 	color: white;
 }
 
+.menu-bar li a:hover, .user-menu li a:hover {
+	color: #00BAF2;
+}
+
 .menu-bar li a {
 	font-size: 1.4em;
 	font-weight: bold;
