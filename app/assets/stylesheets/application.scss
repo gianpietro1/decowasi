@@ -42,7 +42,6 @@ html,body
     width: 100%;
     margin: 0px;
     padding: 0px;
-	  padding-bottom: 20px;
     overflow-x: hidden; 
 }
 
@@ -139,11 +138,14 @@ body {
 	font-size: 1em;
 }
 
+/** Footer **/
+
 .footer {
 	margin: 0 auto;
 	text-align: center;
 	min-height: 410px;
-	background-color: #444;
+	height: auto;
+	background-color: #333;
 	color: white;
 }
 

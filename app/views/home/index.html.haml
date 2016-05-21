@@ -10,10 +10,16 @@
 								= slider.title
 
 .row
+	.col-md-1
+	.col-md-10
+		.search
+			= text_field_tag :search, params[:search], placeholder: "busca ideas, especialistas y productos", size: 150, class: 'search-field'
+	.col-md-1
+
+.row
 	#featured
 		- @featureds.each do |featured|
 			.featured
-				.featured_pattern
 				.featured_image
 					= image_tag(featured.image)
 				.featured_content
