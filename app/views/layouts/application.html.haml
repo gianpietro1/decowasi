@@ -12,29 +12,26 @@
 	%body{ data: {no_turbolink: true} }
 		.container-wide
 			#header
-				#user-menu
+				#main-menu
+					.logo
+						= image_tag("decowasi.png")
 					.menu-bar
 						%ul
-							- unless current_user 
-								%li
-									%a{href: new_user_registration_path} registrarse
-								%li
-									%a{href: new_user_session_path} ingresar
-							- else
-								%li
-									%a{href: '#'} usuario
-					.pattern_one
-				#logo-row
-					.logo
-						= image_tag("logo.png")
-				#main-menu
-					%ul
-						%li
-							%a{href: root_path, class: 'active'} inspiración
-						%li
-							%a{href: '#'} especialistas
-						%li
-							%a{href: '#'} tiendas
+							%li
+								%a{href: root_path, class: 'active'} inspiración
+							%li
+								%a{href: '#'} especialistas
+							%li
+								%a{href: '#'} tiendas
+					.user-menu
+						- unless current_user 
+							%li
+								%a{href: new_user_registration_path} registrarse
+							%li
+								%a{href: new_user_session_path} ingresar
+						- else
+							%li
+								%a{href: '#'} usuario
 
 			- if flash[:notice]
 				.alert.alert-success

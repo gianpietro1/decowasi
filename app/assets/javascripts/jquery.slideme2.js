@@ -111,7 +111,7 @@
             height: 40
         },
         transition: 'slide',
-        speed: 500,
+        speed: 1500,
         swipe: true
     };
 

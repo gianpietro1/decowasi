@@ -54,6 +54,10 @@ html,body
 	margin-top: 20px;
 }
 
+.margin-top-100 {
+	margin-top: 100px;
+}
+
 body {
    font-family: 'Roboto', 'Helvetica';
 }
@@ -69,66 +73,63 @@ body {
 /*** Header ***/
 
 #header {
-	padding: 0 20px;
 }
 
-.pattern_one {
-	height: 20px;
-	background: asset-url('patron1.png') no-repeat;
-}
-
-#user-menu {
-	height: auto;
+#main-menu {
+	height: 70px;
+	background-color: rgba(0,0,0,0.8);
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 10000;
 }
 
 .logo img {
-	margin-top:10px;
 	width: 250px;
-}
-
-#main-menu ul, #logo-row {
-	padding-left: 20px;
+	float: left;
 }
 
 .menu-bar {
-	background-color: #ccc;
-	height: 40px;
 }
 
-.menu-bar ul {
+.menu-bar {
+	float: left;
+	padding: 0;
+	padding-top: 21px;
+}
+
+.user-menu {
 	float: right;
 	padding: 0;
-	margin: 5px auto;
+	margin: 25px auto;
 }
 
-#main-menu li, .menu-bar li {
+.menu-bar li, .user-menu li {
 	list-style: none;
 	display: inline-block;
 	text-align: center;
 }
 
 .menu-bar li {
-	width: 100px;
-	padding-top: 4px;
+	width: 200px;
 }
 
-#main-menu li a, .menu-bar li a {
+.user-menu li {
+	width: 100px;
+}
+
+.menu-bar li a, .user-menu li a {
 	text-decoration: none;
-	color: black;
-	font-weight: bold;
+	color: white;
 }
 
 .menu-bar li a {
-	color: #444;
+	font-size: 1.4em;
+	font-weight: bold;
 }
 
-#main-menu li {
-	padding-right: 20px;
+.user-menu li a {
 	font-size: 1em;
-}
-
-#main-menu a.active {
-	border-bottom: 2px solid #66cc99;
 }
 
 .footer {
@@ -178,8 +179,6 @@ body {
 @media screen and (min-width: 768px) {
 
 #main-menu li {
-	padding-right: 60px;
-	font-size: 1.6em;
 }
 
 .social, .about, .contact {

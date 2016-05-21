@@ -1,21 +1,24 @@
 $(document).ready(function(){
 
 $('#slide').slideme({
-	arrows: true,
+	arrows: false,
 	labels : {
 		next: '',
 		prev: ''
 	},
 	resizable: {
-	width: 800,
-	height: 250,
+	width: 1266,
+	height: 650,
 	},
 	autoslide : true,
-	autoslideHoverStop : true,
-	interval : 2000,
+	autoslideHoverStop : false,
+	interval : 5000,
 	transition : 'fade',
+	speed: 1500,
 	loop : true,
 });
+
+$('.slider_text').fadeIn(2000);
 
 }
 );

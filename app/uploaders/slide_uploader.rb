@@ -25,7 +25,7 @@ class SlideUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_fill => [800, 250]
+  process :resize_to_fill => [1266, 650]
   #
   # def scale(width, height)
   #   # do something
