@@ -111,16 +111,19 @@ body {
 }
 
 .menu-bar li {
-	width: 200px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .user-menu li {
-	width: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .menu-bar li a, .user-menu li a {
 	text-decoration: none;
 	color: white;
+	transition: color 0.5s ease;
 }
 
 .menu-bar li a:hover, .user-menu li a:hover {

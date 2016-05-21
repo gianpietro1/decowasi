@@ -14,15 +14,18 @@
 			#header
 				#main-menu
 					.logo
-						= image_tag("decowasi.png")
+						%a{href: root_path}
+							= image_tag("decowasi.png")
 					.menu-bar
 						%ul
 							%li
-								%a{href: root_path, class: 'active'} INSPIRACIÓN
+								%a{href: root_path, class: 'active'} INICIO
+							%li
+								%a{href: '#'} IDEAS
 							%li
 								%a{href: '#'} ESPECIALISTAS
 							%li
-								%a{href: '#'} TIENDAS
+								%a{href: '#'} PRODUCTOS
 					.user-menu
 						- unless current_user 
 							%li
