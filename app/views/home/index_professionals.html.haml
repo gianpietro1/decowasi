@@ -1,0 +1,21 @@
+.row
+	.col-md-1
+	.col-md-10
+		.search
+			= text_field_tag :search, params[:search], placeholder: "busca profesionales", size: 150, class: 'search-field'
+	.col-md-1
+
+.row
+	.col-md-1
+	.col-md-10
+		- @users.each do |user|
+			%a{href: user_path(user), class:'professional_link'}
+				.professional
+					.professional_image.col
+						= image_tag(user.avatar.profile)
+					.professional_text.col
+						.professional_name
+							= user.name
+						.professional_description
+							= user.description
+	.col-md-1

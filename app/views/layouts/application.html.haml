@@ -23,7 +23,7 @@
 							%li
 								%a{href: '#'} IDEAS
 							%li
-								%a{href: '#'} PROFESIONALES
+								%a{href: '/professionals'} PROFESIONALES
 							%li
 								%a{href: '#'} PRODUCTOS
 					.user-menu
@@ -33,7 +33,7 @@
 							%li
 								%a{href: new_user_session_path} ingresa
 						- else
-							Bienvenido
+							Hola, 
 							= link_to current_user.name, current_user, class: 'menu_link'
 							= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm exit_button' do
 								salir

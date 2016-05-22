@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   post '/unfollow' => 'users#unfollow'
 
   get '/plans' => 'home#plans'
+  get '/professionals' => 'home#index_professionals'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

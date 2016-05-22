@@ -5,6 +5,10 @@ class HomeController < ApplicationController
     @projects = Project.where(featured:true)
   end
 
+  def index_professionals
+    @users = User.where(role:'professional')
+  end
+
   def contact
   end
 

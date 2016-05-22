@@ -15,16 +15,22 @@
 			-if current_user && current_user == @user
 				= link_to 'Editar perfil', edit_registration_path(current_user),class:'btn btn-warning'
 			.followers.col
-				= @user.followers.count
-				Seguidores
+				.following_count.col.text-center
+					Siguiendo
+					%br
+					= @user.following.count
+				.followers_count.col.text-center
+					Seguidores
+					%br
+					= @user.followers.count
 			- if current_user && current_user != @user
-				.col
+				.follow_me.col
 					- unless current_user.following?(@user)
 						%button.not-following.follow_button{id:"follow-#{@user.id}"}
 							Seguir
 					- else
 						%button.following.follow_button{id:"follow-#{@user.id}"}
-							Siguiendo
+							Dejar de seguir
 	.col-md-1
 
 .row.margin-top-20
@@ -57,22 +63,27 @@
 								%a{href:edit_project_path(project)}
 									%i.fa.fa-edit{"aria-hidden":"true"}
 					.featured_content
-						.featured_text.col
-							.featured_title
-								= project.title
-							.featured_description
-								= project.description
-						- if current_user
-							.featured_social.col
-								%a{href:'javascript:;'}
-									- unless current_user.likes.where(project_id: project.id).first.nil?
-										%i.fa.fa-heart.heart_clicked{"aria-hidden":"true",id:project.id}
-									- else
-										%i.fa.fa-heart{"aria-hidden":"true",id:project.id}
-								%span{id:"likes-#{project.id}"}
-									= project.likes.count
-								%a{href:'javascript:;'}
-									%i.fa.fa-star{"aria-hidden":"true"}
-								%a{href:'javascript:;'}
-									%i.fa.fa-share{"aria-hidden":"true"}
-
+						.featured_avatar.col
+							= image_tag(project.user.avatar.thumb)
+						.featured_nonavatar.col
+							.featured_text.col
+								.featured_title
+									= project.title
+								.featured_description
+									= truncate(project.description, :length => 60, :separator => ' ')
+							- if current_user
+								.featured_social
+									.col
+										%a{href:'javascript:;'}
+											- unless current_user.likes.where(project_id: project.id).first.nil?
+												%i.fa.fa-heart.heart_clicked{"aria-hidden":"true",id:project.id}
+											- else
+												%i.fa.fa-heart{"aria-hidden":"true",id:project.id}
+										%span{id:"likes-#{project.id}"}
+											= project.likes.count
+									.col
+										%a{href:'javascript:;'}
+											%i.fa.fa-star{"aria-hidden":"true"}
+									.col
+										%a{href:'javascript:;'}
+											%i.fa.fa-share{"aria-hidden":"true"}

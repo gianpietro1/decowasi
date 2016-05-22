@@ -299,13 +299,22 @@ a .fa-heart, a .fa-star, a .fa-share {
 	background-color: rgba(0,0,0,0.5);
 }
 
+.featured_avatar img {
+	vertical-align: initial;
+	width: 70px;
+	padding: 5px 5px 0 5px;
+}
+
 .featured_text {
-	width: 90%;
+	width: 100%;
 }
 
 .featured_social {
-	width: 9%;
-	float: right;
+	width: 100%;
+}
+
+.featured_social .col {
+	margin-right: 15px;
 }
 
 .featured_title {

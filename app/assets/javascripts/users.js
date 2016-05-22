@@ -8,7 +8,7 @@ $(document).ready(function(){
     if ($(".follow_button").hasClass("not-following")) {
       $.ajax({data: { user_id: user_id }, type: 'post', url: "/follow", success: function(r) { 
         $('#'+id).removeClass( "not-following"); 
-        $('#'+id).addClass( "following").addClass("follow_button").text('Siguiendo');; 
+        $('#'+id).addClass( "following").addClass("follow_button").text('Dejar de seguir');; 
         $('.followers').html(r);
       } });
     } else {
