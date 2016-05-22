@@ -15,12 +15,16 @@
 			-if current_user && current_user == @user
 				= link_to 'Editar perfil', edit_registration_path(current_user),class:'btn btn-warning'
 			.followers.col
-				= @user.followers
+				= @user.followers.count
 				Seguidores
-			- if current_user
-				.follow_button.col
-					%button.btn.btn-info
-						Seguir
+			- if current_user && current_user != @user
+				.col
+					- unless current_user.following?(@user)
+						%button.not-following.follow_button{id:"follow-#{@user.id}"}
+							Seguir
+					- else
+						%button.following.follow_button{id:"follow-#{@user.id}"}
+							Siguiendo
 	.col-md-1
 
 .row.margin-top-20

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post '/like' => 'projects#like'
   post '/unlike' => 'projects#unlike'
 
+  post '/follow' => 'users#follow'
+  post '/unfollow' => 'users#unfollow'
 
   get '/plans' => 'home#plans'
 

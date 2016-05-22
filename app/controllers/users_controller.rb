@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
+  respond_to :html, :js
+
   def index
   end
   
@@ -15,6 +17,24 @@ class UsersController < ApplicationController
     else
       flash[:error] = "Invalid user information"
       redirect_to edit_user_registration_path
+    end
+  end
+
+  def follow
+    @user = User.find(params[:user_id])
+    current_user.follow(@user)
+    follows = @user.followers.count
+    respond_with(follows) do |format|
+      format.html {render :partial => "follow" }
+    end
+  end
+
+  def unfollow
+    @user = User.find(params[:user_id])
+    current_user.unfollow(@user)
+    follows = @user.followers.count
+    respond_with(follows) do |format|
+      format.html {render :partial => "unfollow" }
     end
   end
 

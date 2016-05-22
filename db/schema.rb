@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522071936) do
+ActiveRecord::Schema.define(version: 20160522140036) do
 
   create_table "featureds", force: :cascade do |t|
     t.string   "image"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20160522071936) do
     t.integer  "user_id"
     t.boolean  "featured"
   end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "sliders", force: :cascade do |t|
     t.string   "image"
