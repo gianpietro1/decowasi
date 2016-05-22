@@ -48,6 +48,23 @@
 	margin-bottom: 15px;
 }
 
+.professional_image {
+	width: 96px;
+	padding: 5px;
+}
+
+.professional_image img {
+	width: 109px;
+}
+
+.professional_text {
+	margin-left: 15px;
+	padding:10px;
+	width: 88%;
+	vertical-align: top;
+	word-wrap: break-word;
+}
+
 .professional_link {
 	text-decoration: none;
 	display: block;
@@ -57,6 +74,11 @@
 .professional_link:hover {
 	text-decoration: none;
 	background-color: rgba(0,0,0,0.1);
+}
+
+.professional_name {
+	font-weight: bold;
+	font-size: 1.2em
 }
 
 .user-mid-section {

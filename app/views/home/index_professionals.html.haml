@@ -10,12 +10,15 @@
 	.col-md-10
 		- @users.each do |user|
 			%a{href: user_path(user), class:'professional_link'}
-				.professional
-					.professional_image.col
+				.professional.clearfix
+					.professional_image.pull-left
 						= image_tag(user.avatar.profile)
-					.professional_text.col
-						.professional_name
+					.professional_text.pull-left
+						.professional_name.col
 							= user.name
+						.follow_count_title
+							= user.followers.count
+							SEGUIDORES
 						.professional_description
 							= user.description
 	.col-md-1
