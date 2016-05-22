@@ -18,13 +18,28 @@
 
 .row
 	#featured
-		- @featureds.each do |featured|
+		- @projects.each do |featured|
 			.featured
 				.featured_image
-					= image_tag(featured.image)
+					%a{href: user_path(featured.user)}
+						= image_tag(featured.image)
 				.featured_content
-					.featured_title
-						= featured.title
-					.featured_description
-						= featured.description
+					.featured_text.col
+						.featured_title
+							= featured.title
+						.featured_description
+							= featured.description
+					- if current_user
+						.featured_social.col
+							%a{href:'javascript:;'}
+								- unless current_user.likes.where(project_id: featured.id).first.nil?
+									%i.fa.fa-heart.heart_clicked{"aria-hidden":"true",id:featured.id}
+								- else
+									%i.fa.fa-heart{"aria-hidden":"true",id:featured.id}
+							%span{id:"likes-#{featured.id}"}
+								= featured.likes.count
+							%a{href:'javascript:;'}
+								%i.fa.fa-star{"aria-hidden":"true"}
+							%a{href:'javascript:;'}
+								%i.fa.fa-share{"aria-hidden":"true"}
 

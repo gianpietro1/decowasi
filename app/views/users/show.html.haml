@@ -1,0 +1,68 @@
+.row
+	.col-md-1
+	.col-md-10
+		.cover_photo
+			= image_tag(@user.cover)
+			.profile_photo
+				= image_tag(@user.avatar.profile)
+			.user_name
+				= @user.name
+
+.row.margin-top-10
+	.col-md-1
+	.col-md-10
+		.pull-right
+			.followers.col
+				= @user.followers
+				Seguidores
+			- if current_user
+				.follow_button.col
+					%button.btn.btn-info
+						Seguir
+	.col-md-1
+
+.row.margin-top-20
+	.col-md-1
+	.col-md-10
+		%h5
+			Descripción
+		.description
+			= @user.description	
+
+.row.margin-top-10
+	.col-md-1
+	.col-md-10
+		%h5
+			Proyectos
+		#featured
+			- if current_user && current_user == @user
+				.row
+					= link_to 'Nuevo proyecto', new_project_path, class: 'btn btn-success'
+			- @user.projects.each do |project|
+				.featured
+					.featured_image
+						= image_tag(project.image)
+						- if current_user && current_user == @user
+							.project_edit
+								%a{href:edit_project_path(project)}
+									%i.fa.fa-edit{"aria-hidden":"true"}
+					.featured_content
+						.featured_text.col
+							.featured_title
+								= project.title
+							.featured_description
+								= project.description
+						- if current_user
+							.featured_social.col
+								%a{href:'javascript:;'}
+									- unless current_user.likes.where(project_id: project.id).first.nil?
+										%i.fa.fa-heart.heart_clicked{"aria-hidden":"true",id:project.id}
+									- else
+										%i.fa.fa-heart{"aria-hidden":"true",id:project.id}
+								%span{id:"likes-#{project.id}"}
+									= project.likes.count
+								%a{href:'javascript:;'}
+									%i.fa.fa-star{"aria-hidden":"true"}
+								%a{href:'javascript:;'}
+									%i.fa.fa-share{"aria-hidden":"true"}
+

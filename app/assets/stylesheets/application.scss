@@ -20,6 +20,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 @font-face {
   font-family: 'Roboto';
@@ -50,7 +51,7 @@ html,body
 }
 
 body {
-   font-family: 'Roboto', 'Helvetica';
+   font-family: 'Montserrat','Helvetica';
 }
 
 .clearfix:after {
@@ -62,6 +63,10 @@ body {
 }
 
 /*** Margins ***/
+
+.margin-top-10 {
+	margin-top: 10px;
+}
 
 .margin-top-20 {
 	margin-top: 20px;
@@ -80,6 +85,7 @@ body {
 	position:fixed;
 	width: 100%;
 	top: 70px;
+	z-index: 10000;
 }
 
 /*** Header ***/
@@ -107,13 +113,22 @@ body {
 .menu-bar {
 	float: left;
 	padding: 0;
-	padding-top: 21px;
+	padding-top: 25px;
 }
 
 .user-menu {
 	float: right;
 	padding: 0;
-	margin: 20px auto;
+	margin: 25px auto;
+	color: white;
+}
+
+.exit_button, .exit_button a {
+	height: 25px;
+	font-size: 1em;
+	padding: 2px;
+	width: 50px;
+	margin: 0 5px;
 }
 
 .menu-bar li, .user-menu li {
@@ -132,13 +147,13 @@ body {
 	padding-right: 20px;
 }
 
-.menu-bar li a, .user-menu li a {
+.menu-bar li a, .user-menu li a, a.menu_link {
 	text-decoration: none;
 	color: white;
 	transition: color 0.5s ease;
 }
 
-.menu-bar li a:hover, .user-menu li a:hover {
+.menu-bar li a:hover, .user-menu li a:hover, , a.menu_link:hover {
 	color: #00BAF2;
 }
 
@@ -151,6 +166,7 @@ body {
 	font-size: 1.2em;
 }
 
+
 /** Footer **/
 
 .footer {
@@ -159,6 +175,7 @@ body {
 	height: auto;
 	background-color: #333;
 	color: white;
+	font-weight: normal;
 }
 
 .footer a {
@@ -208,10 +225,98 @@ body {
 /** Home **/
 
 .container_home {
-	min-height: 600px;
+	min-height: 500px;
 	height: 100%;
 	margin-bottom: 1px;
 	padding-bottom: 1px;
+}
+
+/*** General Features ***/
+
+a .fa-heart, a .fa-star, a .fa-share {
+	color:white;
+	font-size: 1.5em;
+	line-height: 1.5em
+}
+
+.heart_clicked {
+	color:#B80000 !important;
+}
+
+.star_clicked {
+	color:#FFCC33 !important;
+}
+
+.col {
+	display: inline-block;
+}
+
+/*** Projects & Featured ***/
+
+#featured {
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+	min-height: 400px;
+}
+
+.featured {
+	width: 40%;
+	position: relative;
+	margin-right: 1.3%;
+	display: inline-block;
+	margin: 20px;
+}
+
+.featured_image {
+	width: 100%;
+}
+
+.featured_image img {
+	width: 100%;
+}
+
+.featured_content {
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	font-size: 1em;
+	padding: 5px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.featured_text {
+	width: 90%;
+}
+
+.featured_social {
+	width: 9%;
+	float: right;
+}
+
+.featured_title {
+	font-size: 1.2em;
+}
+
+.project_edit {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.project_edit {
+	background-color: rgba(0,0,0,0.5);
+	width: 26px;
+	height: 30px;
+	border-bottom-left-radius: 5px;
+}
+
+a .fa-edit {
+	color:white;
+	font-size: 1.5em;
+	line-height: 1.5em
 }
 
 /****************************************************/

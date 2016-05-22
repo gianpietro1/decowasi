@@ -1,0 +1,34 @@
+.cover_photo {
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+}
+
+.cover_photo img {
+	width: 100%;
+}
+
+.profile_photo {
+	position: absolute;
+	left: 100px;
+	bottom: -50px;
+}
+
+.profile_photo img {
+	border-radius: 100%;
+	box-shadow: 1px 1px #333; 
+}
+
+.user_name {
+	left: 280px;
+	bottom: 20px;
+	z-index: 1000;
+	position: absolute;
+	color: white;
+	font-size: 2em;
+	text-shadow: 1px 1px #333; 
+}
+
+.following {
+	
+}

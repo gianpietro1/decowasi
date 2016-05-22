@@ -1,0 +1,19 @@
+= form_for project do |f|
+	.form-group
+		= f.label 'Título'
+		= f.text_field :title, class: 'form-control', placeholder: 'Ingresa el título'
+	.form-group
+		= f.label 'Descripción'
+		= f.text_field :description, class: 'form-control', placeholder: 'Ingresa la descripción'
+	.form_group
+		= f.label 'Imagen'
+		= f.file_field :image
+		= f.hidden_field :image_cache
+	.form_group
+		= f.label 'Destacado'
+		= f.check_box :featured, class: 'checkbox'
+	.form-group
+		= f.submit "Guardar", class: 'btn btn-success'
+		= link_to "Cancelar", user_path(current_user), class: 'btn btn-warning'
+		=	link_to "Borrar", project, method: :delete, class: 'btn btn-danger', data: { confirm: 'Seguro que deseas borrar?' }
+

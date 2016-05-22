@@ -2,7 +2,13 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
+
+	mount_uploader :avatar, AvatarUploader
+	mount_uploader :cover, CoverUploader
+
+	has_many :projects, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   def admin?
     role == 'admin'
@@ -20,5 +26,12 @@ class User < ActiveRecord::Base
     role == 'consumer'
   end
 
+  def followers
+  	1
+  end
+
+	def favorited(project) 
+    favorites.where(project_id: project.id).first
+  end
 
 end

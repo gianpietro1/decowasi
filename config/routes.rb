@@ -1,10 +1,24 @@
 Rails.application.routes.draw do
   
+  get 'projects/new'
+
+  get 'projects/edit'
+
   resources :sliders, except: [:show]
   resources :featureds, except: [:show]
+  resources :projects
+  resources :favorites, only: [:create, :destroy]
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+  resources :users, only: [:update, :show]
+
   root to: 'home#index'
+
+  post '/like' => 'projects#like'
+  post '/unlike' => 'projects#unlike'
+
+
+  get '/plans' => 'home#plans'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

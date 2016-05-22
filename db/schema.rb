@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522025325) do
+ActiveRecord::Schema.define(version: 20160522071936) do
 
   create_table "featureds", force: :cascade do |t|
     t.string   "image"
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 20160522025325) do
     t.string   "link"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "image"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.boolean  "featured"
   end
 
   create_table "sliders", force: :cascade do |t|
@@ -48,6 +65,9 @@ ActiveRecord::Schema.define(version: 20160522025325) do
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.string   "role",                   default: "consumer"
+    t.string   "avatar"
+    t.string   "cover"
+    t.string   "description"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

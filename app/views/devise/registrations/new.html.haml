@@ -5,6 +5,10 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
     .form-group
+      = f.label 'Nombre'
+      %br/
+      = f.text_field :name, autofocus: true, class: 'form-control'
+    .form-group
       = f.label 'Correo'
       %br/
       = f.email_field :email, autofocus: true, class: 'form-control'
@@ -19,6 +23,15 @@
       = f.label 'Confirmación de contraseña'
       %br/
       = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+    .form-group
+      = f.label 'Perfil'
+      %br
+      = f.radio_button :role, 'consumer', :checked => true
+      = label :role_consumer, 'Usuario'
+      = f.radio_button :role, 'professional'
+      = label :role_professional, 'Profesional'
+      = f.radio_button :role, 'store'
+      = label :role_store, 'Tienda'
     .form-group
       = f.submit "Registrarme", class: "btn btn-success"
 

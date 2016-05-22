@@ -33,8 +33,10 @@
 							%li
 								%a{href: new_user_session_path} ingresa
 						- else
-							%li
-								%a{href: '#'} usuario
+							Bienvenido
+							= link_to current_user.name, current_user, class: 'menu_link'
+							= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm exit_button' do
+								salir
 
 			- if flash[:notice]
 				.alert.alert-success

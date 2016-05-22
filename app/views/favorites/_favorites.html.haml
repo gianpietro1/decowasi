@@ -1,0 +1,7 @@
+.favorite
+  - if favorite == current_user.favorited(project)
+    = link_to [project, favorite], class: 'btn btn-danger', method: :delete do
+      %i.glyphicon.glyphicon-star-empty>         \&nbsp; Unfavorite
+  - else
+    = link_to [project, Favorite.new], class: 'btn btn-primary', method: :post do
+      %i.glyphicon.glyphicon-star>         \&nbsp; Favorite

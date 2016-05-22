@@ -1,0 +1,39 @@
+.row
+	.col-md-12
+		%h2.text-center
+			Escoge tu plan
+
+.row.margin-top-20
+	.col-md-1
+	.col-md-10
+		.col-md-6
+			.basic_plan.text-center.clearfix
+				.plan_title.pull-left
+					Básico
+				.plan_price.pull-right
+					$10/mes
+				%ul.clear.fa-ul
+					%br
+					%li
+						%i.fa-li.fa.fa-check
+						Contenido en el perfil limitado a 50MB.
+					%li
+						%i.fa-li.fa.fa-check
+						No puede publicar contenido en Inicio.
+				=	link_to 'Escoger Plan Básico', root_path, class:'btn btn-success'
+
+		.col-md-6
+			.premium_plan.text-center.clearfix
+				.plan_title.pull-left
+					Premium
+				.plan_price.pull-right
+					$25/mes
+				%ul.clear.fa-ul
+					%br
+					%li
+						%i.fa-li.fa.fa-check
+						No tiene limitaciones para subir contenido al perfil.
+					%li
+						%i.fa-li.fa.fa-check
+						Puede subir contenido a Inicio para mostrar su trabajo.
+				=	link_to 'Escoger Plan Premium', root_path, class:'btn btn-success'
