@@ -58,6 +58,8 @@
   .col-md-1
   .col-md-10
     .pull-left
+      = button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Estás seguro?" }, method: :delete, class: 'btn btn-danger'
+    .pull-right
       = link_to "Volver", user_path(current_user), class: 'btn btn-warning'
 
 .row
