@@ -48,4 +48,14 @@
 								.col
 									%a{href:'javascript:;'}
 									%i.fa.fa-share{"aria-hidden":"true"}
+						- else
+							.featured_social
+								.col
+									%i.fa.fa-heart{"aria-hidden":"true",id:featured.id}
+									%span{id:"likes-#{featured.id}"}
+										= featured.likes.count
+								.col
+									%i.fa.fa-star{"aria-hidden":"true"}
+								.col
+									%i.fa.fa-share{"aria-hidden":"true"}
 

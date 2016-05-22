@@ -1,6 +1,6 @@
 .row
 	.col-md-1
-	.col-md-10
+	.col-md-10.cover_section
 		.cover_photo
 			= image_tag(@user.cover)
 			.profile_photo
@@ -8,20 +8,20 @@
 			.user_name
 				= @user.name
 
-.row.margin-top-10
+.row
 	.col-md-1
-	.col-md-10
+	.col-md-10.user-mid-section
 		.pull-right
 			-if current_user && current_user == @user
-				= link_to 'Editar perfil', edit_registration_path(current_user),class:'btn btn-warning'
+				= link_to 'Editar perfil', edit_registration_path(current_user),class:'btn btn-warning edit_profile'
 			.followers.col
 				.following_count.col.text-center
-					Siguiendo
-					%br
+					.follow_count_title
+						SIGUIENDO
 					= @user.following.count
 				.followers_count.col.text-center
-					Seguidores
-					%br
+					.follow_count_title
+						SEGUIDORES
 					= @user.followers.count
 			- if current_user && current_user != @user
 				.follow_me.col
@@ -87,3 +87,13 @@
 									.col
 										%a{href:'javascript:;'}
 											%i.fa.fa-share{"aria-hidden":"true"}
+							- else
+								.featured_social
+									.col
+										%i.fa.fa-heart{"aria-hidden":"true",id:project.id}
+										%span{id:"likes-#{project.id}"}
+											= project.likes.count
+									.col
+										%i.fa.fa-star{"aria-hidden":"true"}
+									.col
+										%i.fa.fa-share{"aria-hidden":"true"}

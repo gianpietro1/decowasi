@@ -1,7 +1,12 @@
+.cover_section {
+	padding: 0 !important;
+}
+
 .cover_photo {
 	text-align: center;
 	margin: 0 auto;
 	position: relative;
+	z-index: 100;
 }
 
 .cover_photo img {
@@ -16,7 +21,8 @@
 
 .profile_photo img {
 	border-radius: 100%;
-	box-shadow: 1px 1px #333; 
+	box-shadow: 1px 1px #333;
+	z-index: 1000;
 }
 
 .user_name {
@@ -31,7 +37,10 @@
 
 .follow_me {
 	vertical-align: top;
-	padding: 4px;
+}
+
+.follow_me button {
+	width: 130px;
 }
 
 .professional {
@@ -48,4 +57,31 @@
 .professional_link:hover {
 	text-decoration: none;
 	background-color: rgba(0,0,0,0.1);
+}
+
+.user-mid-section {
+	background-color: #f0f0f0;
+	padding: 10px;
+	z-index: 0;
+}
+
+.edit_profile {
+	vertical-align: top !important;
+	margin-right: 20px;
+	z-index: 10000
+}
+
+.followers {
+	padding-left: 20px;
+	padding-right: 10px;
+	border-left: 1px solid #a0a0a0;
+}
+
+.followers .col {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.follow_count_title {
+	font-size: 0.8em
 }
