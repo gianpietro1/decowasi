@@ -11,7 +11,7 @@
 				.plan_title.pull-left
 					Básico
 				.plan_price.pull-right
-					$10/mes
+					Gratis
 				%ul.clear.fa-ul
 					%br
 					%li
@@ -20,14 +20,14 @@
 					%li
 						%i.fa-li.fa.fa-check
 						No puede publicar contenido en Inicio.
-				=	link_to 'Escoger Plan Básico', root_path, class:'btn btn-success'
+				=	link_to 'Escoger Plan Básico', user_path(current_user), class:'btn btn-success'
 
 		.col-md-6
 			.premium_plan.text-center.clearfix
 				.plan_title.pull-left
 					Premium
 				.plan_price.pull-right
-					$25/mes
+					S/.30.00/mes
 				%ul.clear.fa-ul
 					%br
 					%li
@@ -36,4 +36,4 @@
 					%li
 						%i.fa-li.fa.fa-check
 						Puede subir contenido a Inicio para mostrar su trabajo.
-				=	link_to 'Escoger Plan Premium', root_path, class:'btn btn-success'
+				=	link_to 'Escoger Plan Premium', user_path(current_user), class:'btn btn-success'
