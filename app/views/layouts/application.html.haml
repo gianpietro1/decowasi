@@ -23,15 +23,15 @@
 							%li
 								%a{href: '#'} IDEAS
 							%li
-								%a{href: '#'} ESPECIALISTAS
+								%a{href: '#'} PROFESIONALES
 							%li
 								%a{href: '#'} PRODUCTOS
 					.user-menu
 						- unless current_user 
 							%li
-								%a{href: new_user_registration_path} registrarse
+								%a{href: new_user_registration_path} registrate
 							%li
-								%a{href: new_user_session_path} ingresar
+								%a{href: new_user_session_path} ingresa
 						- else
 							%li
 								%a{href: '#'} usuario
@@ -73,10 +73,10 @@
 			.contact
 				%h3
 					contacto
-				%a{mailto: "soporte@decowasi.com"}
-					Ayuda
-				%br
 				%a{mailto: "ventas@decowasi.com"}
-					Inscribe tu proyecto
+					Ventas
+				%br
+				%a{mailto: "soporte@decowasi.com"}
+					Soporte
 
 
