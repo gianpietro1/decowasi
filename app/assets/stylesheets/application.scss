@@ -100,7 +100,7 @@ body {
 .user-menu {
 	float: right;
 	padding: 0;
-	margin: 25px auto;
+	margin: 20px auto;
 }
 
 .menu-bar li, .user-menu li {
@@ -135,32 +135,30 @@ body {
 }
 
 .user-menu li a {
-	font-size: 1em;
+	font-size: 1.2em;
 }
 
 /** Footer **/
 
 .footer {
 	margin: 0 auto;
-	text-align: center;
 	min-height: 410px;
 	height: auto;
 	background-color: #333;
 	color: white;
 }
 
-.social, .about, .contact {
-	width: 90%;
-	text-align: center;
-	margin: 10px auto;
-}
-
 .footer a {
 	color: white;
 }
 
-.social, .about {
-	padding-right: 10px;
+.about {
+	font-size: 1.2em;
+}
+
+.about p {
+	display: block;
+	width: 80%;
 }
 
 .social {
@@ -173,6 +171,18 @@ body {
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
+.contact a {
+	font-size: 1.2em;
+	transition: color 0.5s ease;
+}
+
+.contact a:hover {
+	text-decoration: none;
+	color: #00BAF2;
+}
+
+/** Home **/
 
 .container_home {
 	min-height: 400px;
@@ -190,15 +200,8 @@ body {
 #main-menu li {
 }
 
-.social, .about, .contact {
-	width: 33%;
-	display: inline-block;
-	text-align: left;
-	vertical-align: top
-}
 
 .footer {
-	min-height: 310px;
 }
 
 

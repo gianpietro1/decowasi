@@ -7,7 +7,7 @@
 		= javascript_include_tag 'application', 'data-turbolinks-track' => false
 		= favicon_link_tag 'favicon.ico'
 		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-		= display_meta_tags :site => 'decowasi.com' 
+		= display_meta_tags :site => 'decowasi | Diseño y Renovación de Hogares' 
 		= csrf_meta_tags
 	%body{ data: {no_turbolink: true} }
 		.container-wide
@@ -29,7 +29,7 @@
 					.user-menu
 						- unless current_user 
 							%li
-								%a{href: new_user_registration_path} registrate
+								%a{href: new_user_registration_path} regístrate
 							%li
 								%a{href: new_user_session_path} ingresa
 						- else
@@ -55,8 +55,8 @@
 		.container_home
 			= yield
 
-		.footer
-			.social
+		.row.footer
+			.col-md-4.social
 				%a{href:'#', target: "_blank"}
 					%i{class:"fa fa-facebook-official","aria-hidden":"true"}
 				%a{href:'#', target: "_blank"}
@@ -65,18 +65,18 @@
 					%i{class:"fa fa-twitter-square","aria-hidden":"true"}
 				%a{href:'#', target: "_blank"}
 					%i{class:"fa fa-pinterest-square","aria-hidden":"true"}
-			.about
+			.col-md-4.about
 				%h3
 					quiénes somos
 				%p
 					Decowasi es una comunidad online o red social enfocada en el mercado del diseño y reno- vación de hogares que per- mite facilitar la interacción y dinámica entre las personas que están buscando diseñar o remodelar su casa, espe- cialistas en diseño como dis- eñadores y arquitectos y tien- das que quieran incoporar el canal de venta online a través de un marketplace. 
-			.contact
+			.col-md-4.contact
 				%h3
 					contacto
 				%a{href: "mailto:ventas@decowasi.com"}
-					Ventas
+					Ventas - ventas@decowasi.com
 				%br
 				%a{href: "mailto:soporte@decowasi.com"}
-					Soporte
+					Soporte - soporte@decowasi.com
 
 
