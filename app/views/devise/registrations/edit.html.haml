@@ -35,7 +35,10 @@
     = form_for(current_user) do |f|
       .form-group
         = f.label 'Nombre'
-        = f.text_field :name, class: 'form-control', placeholder: "Enter name", autofocus: true
+        = f.text_field :name, class: 'form-control', placeholder: "Ingresa tu nombre", autofocus: true
+      .form-group
+        = f.label 'Descripción'
+        = f.text_area :description, class: 'form-control', placeholder: "Descríbete", autofocus: true
       - if current_user.avatar?
         .form_group
           %p Foto de perfil actual
@@ -53,11 +56,9 @@
 
 .row
   .col-md-1
-  .col-md-4
-    %h3 Cancelar mi cuenta
-    %p
-      Deseas cancelar? #{button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger'}
-    = link_to "Volver", :back, class: 'btn btn-warning'
+  .col-md-10
+    .pull-left
+      = link_to "Volver", user_path(current_user), class: 'btn btn-warning'
 
 .row
   %br

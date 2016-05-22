@@ -12,6 +12,8 @@
 	.col-md-1
 	.col-md-10
 		.pull-right
+			-if current_user && current_user == @user
+				= link_to 'Editar perfil', edit_registration_path(current_user),class:'btn btn-warning'
 			.followers.col
 				= @user.followers
 				Seguidores
@@ -32,10 +34,14 @@
 .row.margin-top-10
 	.col-md-1
 	.col-md-10
-		%h5
-			Proyectos
+		- if @user.professional?
+			%h5
+				Proyectos
+		- else
+			%h5
+				Favoritos
 		#featured
-			- if current_user && current_user == @user
+			- if current_user && current_user == @user && current_user.professional?
 				.row
 					= link_to 'Nuevo proyecto', new_project_path, class: 'btn btn-success'
 			- @user.projects.each do |project|
