@@ -94,8 +94,8 @@ body {
 }
 
 #main-menu {
-	height: 70px;
-	background-color: rgba(0,0,0,0.8);
+	height: 50px;
+	background-color: rgba(0,0,0,0.9);
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -103,24 +103,13 @@ body {
 }
 
 .logo img {
-	width: 250px;
+	width: 150px;
+	margin-top: 5px;
 	float: left;
 }
 
-.menu-bar {
-}
-
-.menu-bar {
-	float: left;
-	padding: 0;
-	padding-top: 25px;
-}
-
-.user-menu {
-	float: right;
-	padding: 0;
-	margin: 25px auto;
-	color: white;
+.menu-bar, .user-menu {
+	display: none;
 }
 
 .exit_button, .exit_button a {
@@ -130,42 +119,6 @@ body {
 	width: 50px;
 	margin: 0 5px;
 }
-
-.menu-bar li, .user-menu li {
-	list-style: none;
-	display: inline-block;
-	text-align: center;
-}
-
-.menu-bar li {
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
-.user-menu li {
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-.menu-bar li a, .user-menu li a, a.menu_link {
-	text-decoration: none;
-	color: white;
-	transition: color 0.5s ease;
-}
-
-.menu-bar li a:hover, .user-menu li a:hover, , a.menu_link:hover {
-	color: #00BAF2;
-}
-
-.menu-bar li a {
-	font-size: 1em;
-	font-weight: bold;
-}
-
-.user-menu li a {
-	font-size: 1em;
-}
-
 
 /** Footer **/
 
@@ -225,6 +178,7 @@ body {
 /** Home **/
 
 .container_home {
+	margin-top: 49px !important;
 	min-height: 500px;
 	height: 100%;
 	margin-bottom: 1px;
@@ -266,18 +220,17 @@ a .fa-heart, a .fa-star, a .fa-share {
 /*** Projects & Featured ***/
 
 #featured {
-	width: 100%;
-	margin: 20px auto;
+	width: 90%;
+	margin: 0 auto;
 	text-align: center;
 	min-height: 400px;
 }
 
 .featured {
-	width: 32%;
+	width: 95%;
 	position: relative;
-	margin-right: 1.3%;
-	display: inline-block;
-	margin: 20px;
+	display: block;
+	margin: 20px auto;
 }
 
 .featured_image {
@@ -349,17 +302,195 @@ a .fa-edit {
 	line-height: 1.5em
 }
 
+.navbar-toggle {
+	background-color: transparent;
+	color: white;
+	z-index: 20000;
+	position:fixed;
+	right: 1px;
+	top: 2px;
+}
+
+.icon-bar {
+	background-color: white;
+}
+
+.navbar-collapse {
+	width: 100%;
+	clear: both;
+	font-size: 1.2em;
+}
+
+.mobile-bar {
+	display: block;
+	padding-top: 18px;
+	float: right;
+	margin-right: 70px;
+}
+
+.mobile-bar a {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.mobile-menu {
+	display: none;
+	position: fixed;
+	right:0;
+	top:50px;
+	background-color: rgba(0,0,0,0.9);
+}
+
+.mobile-menu ul {
+	padding-left: 10px;
+}
+
+
+.mobile-menu li {
+	list-style: none;
+}
+
+.mobile-menu li a {
+	color: white;
+}
+
+.mobile-menu li a:hover {
+	text-decoration: none;
+	color: #00BAF2;
+}
+
+.my_profile {
+	color: white;
+	font-size: 1.2em;
+}
+
+.my_profile:hover {
+	color: #00BAF2;
+}
+
+.contact {
+	font-size: 1em;
+}
+
 /****************************************************/
 /******************** DESKTOP ***********************/
 /****************************************************/
 
+
 @media screen and (min-width: 768px) {
 
-#main-menu li {
+.contact {
+	font-size: 1.2em;
+}
+
+.description {
+	width: 75%;
+	float:left;
+}
+
+.contact {
+	margin-left: 10px;
+	float:left;
+}
+
+.my_profile {
+	font-size: 1.5em;
+	margin: 0 10px;
+}
+
+.mobile-bar {
+	display: none;
+}
+
+.container_home {
+	margin-top: 100px !important;
+}
+
+.featured {
+	display: inline-block;
+	width: 32%;
+	margin: 20px;
+}
+
+#main-menu {
+	height: 70px;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.logo img {
+	width: 250px;
+}
+
+.menu-bar, .user-menu {
+	display: block;
+}
+
+.menu-bar {
+	float: left;
+	padding: 0;
+	padding-top: 25px;
+}
+
+.user-menu {
+	float: right;
+	padding: 0;
+	margin: 25px auto;
+	color: white;
+}
+
+.menu-bar li, .user-menu li {
+	list-style: none;
+	display: inline-block;
+	text-align: center;
+}
+
+.menu-bar li {
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.menu-bar li a, .user-menu li a, a.menu_link {
+	text-decoration: none;
+	color: white;
+	transition: color 0.5s ease;
+}
+
+.menu-bar li a:hover, .user-menu li a:hover, , a.menu_link:hover {
+	color: #00BAF2;
+}
+
+.menu-bar ul {
+	padding-left: 5px;
+}
+
+.menu-bar li a {
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.user-menu, .user-menu a {
+	font-size: 10px;
+}
+
 }
 
 
-.footer {
+@media screen and (min-width: 1060px) {
+.menu-bar li {
+	padding-left: 18px;
+	padding-right: 18px;
+}
+
+.menu-bar ul {
+	padding-left: 25px;
+}
+
+.menu-bar li a {
+	font-size: 1em;
+}
+
+.user-menu, .user-menu a {
+	font-size: 12px;
 }
 
 

@@ -52,5 +52,8 @@ $(document).ready(function(){
   }
   });
 
-	$('.inactive').click(false);
+	$('.navbar-toggle').click(function() {
+    $('.mobile-menu').slideToggle();
+  });
+
 });

@@ -1,0 +1,51 @@
+%button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+  %span.icon-bar
+  %span.icon-bar
+  %span.icon-bar
+#main-menu
+  .logo
+    %a{href: root_path}
+      = image_tag("decowasi.png")
+  .menu-bar
+    %ul
+      %li
+        %a{href: root_path, class: 'active'} INICIO
+      %li
+        %a{href: '#'} IDEAS
+      %li
+        %a{href: '/professionals'} PROFESIONALES
+      %li
+        %a{href: '#'} PRODUCTOS
+  .user-menu
+    - unless current_user 
+      %li
+        %a{href: new_user_registration_path} regístrate
+      %li
+        %a{href: new_user_session_path} ingresa
+    - else
+      Hola, 
+      = link_to current_user.name, current_user, class: 'menu_link'
+      %a{rel:"nofollow", 'data-method':"delete", href: "/users/sign_out", class: 'menu_link'} 
+        %i.fa.fa-sign-out{"aria-hidden":"true", class: 'my_profile'}
+  .mobile-bar
+    - if current_user
+      %a{href: user_path(current_user), class: 'menu_link'} 
+        %i.fa.fa-user{"aria-hidden":"true", class: 'my_profile'}
+      %a{rel:"nofollow", 'data-method':"delete", href: "/users/sign_out", class: 'menu_link'} 
+        %i.fa.fa-sign-out{"aria-hidden":"true", class: 'my_profile'}
+  .mobile-menu
+    %ul
+      %li
+        %a{href: root_path, class: 'active'} INICIO
+      %li
+        %a{href: '#'} IDEAS
+      %li
+        %a{href: '/professionals'} PROFESIONALES
+      %li
+        %a{href: '#'} PRODUCTOS
+      - unless current_user 
+        %li
+          %a{href: new_user_registration_path} regístrate
+        %li
+          %a{href: new_user_session_path} ingresa        
+

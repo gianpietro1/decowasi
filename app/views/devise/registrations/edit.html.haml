@@ -39,6 +39,9 @@
       .form-group
         = f.label 'Descripción'
         = f.text_area :description, class: 'form-control', placeholder: "Descríbete", autofocus: true
+      .form-group
+        = f.label 'Teléfono'
+        = f.text_field :phone, class: 'form-control', placeholder: "Teléfono", autofocus: true
       - if current_user.avatar?
         .form_group
           %p Foto de perfil actual

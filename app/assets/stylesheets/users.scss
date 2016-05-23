@@ -14,33 +14,29 @@
 }
 
 .profile_photo {
+	width: 100%;
 	position: absolute;
-	left: 100px;
 	bottom: -50px;
+	margin: 0 auto;
 }
 
 .profile_photo img {
+	width: 100px;
+	text-align: center;
 	border-radius: 100%;
 	box-shadow: 1px 1px #333;
 	z-index: 1000;
 }
 
 .user_name {
-	left: 280px;
-	bottom: 20px;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	bottom: -80px;
 	z-index: 1000;
 	position: absolute;
-	color: white;
-	font-size: 1.8em;
-	text-shadow: 1px 1px #333; 
-}
-
-.follow_me {
-	vertical-align: top;
-}
-
-.follow_me button {
-	width: 130px;
+	color: #333;
+	font-size: 1.5em;
 }
 
 .professional {
@@ -49,18 +45,22 @@
 }
 
 .professional_image {
-	width: 96px;
-	padding: 5px;
+	width: 100%;
+	text-align: center;
+	clear: both;
+	margin: 10px auto;
 }
 
 .professional_image img {
+	border-radius: 100%;
+	box-shadow: 1px 1px #333;
+	z-index: 1000;
 	width: 109px;
 }
 
 .professional_text {
-	margin-left: 15px;
 	padding:10px;
-	width: 88%;
+	width: 100%;
 	vertical-align: top;
 	word-wrap: break-word;
 }
@@ -85,18 +85,15 @@
 	background-color: #f0f0f0;
 	padding: 10px;
 	z-index: 0;
-}
-
-.edit_profile {
-	vertical-align: top !important;
-	margin-right: 20px;
-	z-index: 10000
+	height: auto;
+	padding-top: 80px;
+	margin: 0 auto;
 }
 
 .followers {
-	padding-left: 20px;
-	padding-right: 10px;
-	border-left: 1px solid #a0a0a0;
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
 }
 
 .followers .col {
@@ -106,4 +103,94 @@
 
 .follow_count_title {
 	font-size: 0.8em
+}
+
+.follow_me {
+	vertical-align: top;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.follow_me button {
+	width: 130px;
+}
+
+.edit_profile {
+	z-index: 10000;
+	height: 25px;
+	padding: 2px 5px !important;
+	font-size: 0.6em;
+	width: 130px;
+}
+
+.description, .projects, .contact {
+	padding: 0 5px;
+}
+
+@media screen and (min-width: 768px) {
+
+.professional_image {
+	float: left !important;
+	width: 96px;
+	padding: 5px;
+	margin-left: 15px;
+}
+
+.professional_image img {
+	width: 109px;
+	border-radius: 0%;
+}
+
+.professional_text {
+	width: 80%;
+	margin-left: 15px;
+}
+
+.profile_photo {
+	width: 160px;
+	margin: 0;
+	left: 100px !important;
+}
+
+.profile_photo img {
+	text-align: initial;
+	width: 160px;
+}
+
+.user_name {
+	width: 200px;
+	left: 280px;
+	bottom: 20px;
+	color: white;
+	font-size: 1.8em;
+	text-shadow: 1px 1px #333; 
+}
+
+.user-mid-section {
+	width: 100%;
+	padding-top: 10px;
+}
+
+.followers {
+	width: 200px;
+	float: right;
+}
+
+.follow_me {
+	float: right;
+	width: 130px;
+}
+
+.follow_me button {
+	width: 130px;
+}
+
+.edit_profile {
+	z-index: 10000;
+	height: 35px;
+	padding: 5px !important;
+	font-size: 1em;
+}
+
 }

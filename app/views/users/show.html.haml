@@ -10,46 +10,58 @@
 
 .row
 	.col-md-1
-	.col-md-10.user-mid-section
-		.pull-right
-			-if current_user && current_user == @user
-				= link_to 'Editar perfil', edit_registration_path(current_user),class:'btn btn-warning edit_profile'
-			.followers.col
-				.following_count.col.text-center
-					.follow_count_title
-						SIGUIENDO
-					= @user.following.count
-				.followers_count.col.text-center
-					.follow_count_title
-						SEGUIDORES
-					= @user.followers.count
-			- if current_user && current_user != @user
-				.follow_me.col
-					- unless current_user.following?(@user)
-						%button.not-following.follow_button{id:"follow-#{@user.id}"}
-							Seguir
-					- else
-						%button.following.follow_button{id:"follow-#{@user.id}"}
-							Dejar de seguir
+	.col-md-10.user-mid-section.clearfix
+		.followers.col
+			.following_count.col.text-center
+				.follow_count_title
+					SIGUIENDO
+				= @user.following.count
+			.followers_count.col.text-center
+				.follow_count_title
+					SEGUIDORES
+				= @user.followers.count
+		- if current_user && current_user != @user
+			.follow_me.col
+				- unless current_user.following?(@user)
+					%button.not-following.follow_button{id:"follow-#{@user.id}"}
+						Seguir
+				- else
+					%button.following.follow_button{id:"follow-#{@user.id}"}
+						Dejar de seguir
+		- else
+			.follow_me.col
+				-if current_user && current_user == @user
+					= link_to 'Editar perfil', edit_registration_path(current_user),class:'btn btn-warning edit_profile'
 	.col-md-1
 
 .row.margin-top-20
 	.col-md-1
 	.col-md-10
-		%h5
-			Descripción
 		.description
-			= @user.description	
+			%h5
+				DESCRIPCIÓN
+			%p
+				= @user.description	
+		.contact
+			%h5
+				CONTACTO
+			.email
+				%i.fa.fa-envelope{"aria-hidden":"true"}
+				= @user.email
+			.phone
+				%i.fa.fa-phone{"aria-hidden":"true"}
+				= @user.phone
 
 .row.margin-top-10
 	.col-md-1
 	.col-md-10
-		- if @user.professional?
-			%h5
-				Proyectos
-		- else
-			%h5
-				Favoritos
+		.projects
+			- if @user.professional?
+				%h5
+					PROYECTOS
+			- else
+				%h5
+					FAVORITOS
 		#featured
 			- if current_user && current_user == @user && current_user.professional?
 				.row
