@@ -368,7 +368,7 @@ a .fa-edit {
 	color: #00BAF2;
 }
 
-.contact {
+.contact-data {
 	font-size: 1em;
 }
 
@@ -379,7 +379,7 @@ a .fa-edit {
 
 @media screen and (min-width: 768px) {
 
-.contact {
+.contact-data {
 	font-size: 1.2em;
 }
 
@@ -388,7 +388,7 @@ a .fa-edit {
 	float:left;
 }
 
-.contact {
+.contact-data {
 	margin-left: 10px;
 	float:left;
 }
@@ -408,7 +408,7 @@ a .fa-edit {
 
 .featured {
 	display: inline-block;
-	width: 32%;
+	width: 36%;
 	margin: 20px;
 }
 
@@ -469,7 +469,12 @@ a .fa-edit {
 }
 
 .user-menu, .user-menu a {
-	font-size: 10px;
+	font-size: 12px;
+}
+
+.user-menu li {
+	padding-left: 6px;
+	padding-right: 6px;	
 }
 
 }
@@ -490,7 +495,12 @@ a .fa-edit {
 }
 
 .user-menu, .user-menu a {
-	font-size: 12px;
+	font-size: 16px;
+}
+
+.user-menu li {
+	padding-left: 10px;
+	padding-right: 10px;	
 }
 
 
