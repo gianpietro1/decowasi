@@ -438,7 +438,7 @@ a .fa-edit {
 .user-menu {
 	float: right;
 	padding: 0;
-	margin: 25px auto;
+	margin: 29px auto;
 	color: white;
 }
 
@@ -498,13 +498,17 @@ a .fa-edit {
 	font-size: 1em;
 }
 
+.user-menu {
+	margin: 27px auto;
+}
+
 .user-menu, .user-menu a {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .user-menu li {
 	padding-left: 10px;
-	padding-right: 10px;	
+	padding-right: 15px;	
 }
 
 
