@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
   	@sliders = Slider.all
-    @featureds = Featured.all
     @projects = Project.where(featured:true)
   end
 

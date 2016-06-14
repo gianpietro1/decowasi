@@ -1,0 +1,48 @@
+#featured
+	- projects.each do |project|
+		.featured
+			.featured_image
+				%a{href: user_path(project.user)}
+					= image_tag(project.image)
+			.featured_content
+				.featured_avatar.col
+					= image_tag(project.user.avatar.thumb)
+				.featured_nonavatar.col
+					.featured_text
+						.featured_title
+							= project.title
+						.featured_description
+							= truncate(project.description, :length => 60, :separator => ' ')
+					- if current_user
+						.featured_social
+							.col
+								%a{href:'javascript:;'}
+									- unless current_user.likes.where(project_id: project.id).first.nil?
+										%i.fa.fa-heart.heart_clicked{"aria-hidden":"true",id:project.id}
+									- else
+										%i.fa.fa-heart{"aria-hidden":"true",id:project.id}
+								%span{id:"likes-#{project.id}"}
+									= project.likes.count
+							.col
+								%a{href:'javascript:;'}
+									- unless current_user.favorites.where(project_id: project.id).first.nil?
+										%i.fa.fa-star.star_clicked{"aria-hidden":"true",id:'favorite-'+project.id.to_s}
+									- else
+										%i.fa.fa-star{"aria-hidden":"true",id:'favorite-'+project.id.to_s}
+								%span{id:"favorites-#{project.id}"}
+									= project.favorites.count
+							.col
+								%a{href:'javascript:;'}
+								%i.fa.fa-share{"aria-hidden":"true"}
+					- else
+						.featured_social
+							.col
+								%i.fa.fa-heart{"aria-hidden":"true",id:project.id}
+								%span{id:"likes-#{project.id}"}
+									= project.likes.count
+							.col
+								%i.fa.fa-star{"aria-hidden":"true",id:'favorite'+project.id.to_s}
+								%span{id:"favorites-#{project.id}"}
+									= project.favorites.count
+							.col
+								%i.fa.fa-share{"aria-hidden":"true"}

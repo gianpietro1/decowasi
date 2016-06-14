@@ -59,6 +59,24 @@ class ProjectsController < ApplicationController
    end
   end
 
+  def favorite
+    @project = Project.find(params[:project_id])
+    current_user.favorites.create(project_id: @project.id)
+    @favorites = @project.favorites.count
+    respond_with(@project,@favorites) do |format|
+      format.html {render :partial => "favorite" }
+    end
+  end
+  
+  def unfavorite
+    @project = Project.find(params[:project_id])
+    current_user.favorites.where(project_id: @project.id).first.delete
+    @favorites = @project.favorites.count
+    respond_with(@project,@favorites) do |format|
+      format.html {render :partial => "unfavorite" }
+   end
+  end
+
   private
  
   def project_params

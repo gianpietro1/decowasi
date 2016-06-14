@@ -37,20 +37,23 @@ $(document).ready(function(){
   });
 
   $(".fa-star").click(function() {
-  	if ($(this).hasClass("star_clicked")) {
-  		$(this).removeClass("star_clicked")
-  	} else {
-  	$(this).addClass("star_clicked");
-  }
+
+    var project_id = $(this).attr('id').replace('favorite-','');
+
+    if ($('#favorite-'+project_id).hasClass("star_clicked")) {
+      $.ajax({data: { project_id: project_id }, type: 'post', url: "/unfavorite", success: function(r) { 
+        $('#favorite-'+project_id).removeClass( "star_clicked"); 
+        $('#favorites-'+project_id).html(r);
+      } });
+    } else {
+      $.ajax({data: { project_id: project_id }, type: 'post', url: "/favorite", success: function(r) { 
+        $('#favorite-'+project_id).addClass( "star_clicked"); 
+        $('#favorites-'+project_id).html(r);
+      } });
+    }
+
   });
 
-  $(".fa-heart").click(function() {
-  	if ($(this).hasClass("heart_liked")) {
-  		$(this).removeClass("heart_liked")
-  	} else {
-  	$(this).addClass("heart_liked");
-  }
-  });
 
 	$('.navbar-toggle').click(function() {
     $('.mobile-menu').slideToggle();

@@ -17,45 +17,5 @@
 	.col-md-1
 
 .row
-	#featured
-		- @projects.each do |featured|
-			.featured
-				.featured_image
-					%a{href: user_path(featured.user)}
-						= image_tag(featured.image)
-				.featured_content
-					.featured_avatar.col
-						= image_tag(featured.user.avatar.thumb)
-					.featured_nonavatar.col
-						.featured_text
-							.featured_title
-								= featured.title
-							.featured_description
-								= truncate(featured.description, :length => 60, :separator => ' ')
-						- if current_user
-							.featured_social
-								.col
-									%a{href:'javascript:;'}
-										- unless current_user.likes.where(project_id: featured.id).first.nil?
-											%i.fa.fa-heart.heart_clicked{"aria-hidden":"true",id:featured.id}
-										- else
-											%i.fa.fa-heart{"aria-hidden":"true",id:featured.id}
-									%span{id:"likes-#{featured.id}"}
-										= featured.likes.count
-								.col
-									%a{href:'javascript:;'}
-										%i.fa.fa-star{"aria-hidden":"true"}
-								.col
-									%a{href:'javascript:;'}
-									%i.fa.fa-share{"aria-hidden":"true"}
-						- else
-							.featured_social
-								.col
-									%i.fa.fa-heart{"aria-hidden":"true",id:featured.id}
-									%span{id:"likes-#{featured.id}"}
-										= featured.likes.count
-								.col
-									%i.fa.fa-star{"aria-hidden":"true"}
-								.col
-									%i.fa.fa-share{"aria-hidden":"true"}
+	= render partial: 'projects/projects', locals: {projects: @projects }
 

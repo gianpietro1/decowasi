@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post '/like' => 'projects#like'
   post '/unlike' => 'projects#unlike'
 
+  post '/favorite' => 'projects#favorite'
+  post '/unfavorite' => 'projects#unfavorite'
+
   post '/follow' => 'users#follow'
   post '/unfollow' => 'users#unfollow'
 

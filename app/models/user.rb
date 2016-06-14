@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
 
 	has_many :projects, dependent: :destroy
   has_many :likes, dependent: :destroy
-	
+  has_many :favorites, dependent: :destroy
+
 	has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -51,8 +52,12 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
 
-	def favorited(project) 
-    favorites.where(project_id: project.id).first
+  def favorite_projects
+    projects = []
+    self.favorites.each do |favorite|
+      projects << Project.find(favorite.project_id)
+    end
+    return projects
   end
 
 end
